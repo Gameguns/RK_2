@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: sudo apt update && sudo apt install -y cmake build-essential checkinstall
+      - name: Build and test
+        run: chmod +x build_and_test.sh && ./build_and_test.sh
+      - name: Upload deb artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: memento-package
+          path: memento-pattern.deb
