@@ -1,24 +1,15 @@
 #ifndef STATE_HPP
 #define STATE_HPP
+
 #include <string>
 
 class State {
     std::string data;
 public:
-    State() : data("") {}  // ← конструктор по умолчанию
+    State() : data("") {}
     State(const std::string& s) : data(s) {}
     std::string getData() const { return data; }
     void setData(const std::string& s) { data = s; }
 };
 
-#endif#ifndef STATE_HPP
-#define STATE_HPP
-#include <string>
-class State {
-    std::string data;
-public:
-    State(const std::string& s) : data(s) {}
-    std::string getData() const { return data; }
-    void setData(const std::string& s) { data = s; }
-};
-#endif
+#endif 
