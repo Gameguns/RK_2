@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/memento_test.dir/test.cpp.o CMakeFiles/memento_test.dir/Originator.cpp.o CMakeFiles/memento_test.dir/State.cpp.o CMakeFiles/memento_test.dir/Memento.cpp.o -o memento_test  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a 

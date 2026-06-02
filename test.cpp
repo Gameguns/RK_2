@@ -1,10 +1,9 @@
 #include "Originator.hpp"
 #include "State.hpp"
 #include "Memento.hpp"
-#include <iostream>
-#include <cassert>
+#include <gtest/gtest.h>
 
-int main() {
+TEST(MementoTest, RestoreState) {
     State original("First state");
     Originator originator;
     originator.setState(original);
@@ -16,9 +15,12 @@ int main() {
 
     originator.restoreFromMemento(saved);
 
-    assert(originator.getState().getData() == original.getData());
-    std::cout << "Test passed: state restored correctly.\n";
+    EXPECT_EQ(originator.getState().getData(), original.getData());
 
     delete saved;
-    return 0;
+}
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
