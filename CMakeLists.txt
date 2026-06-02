@@ -10,3 +10,5 @@ add_executable(memento_test
     Memento.cpp
     test.cpp
 )
+
+install(TARGETS memento_test DESTINATION /usr/local/bin)
